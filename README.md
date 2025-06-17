@@ -20,60 +20,38 @@ A simple graphical editor built with C++ using the SFML library. Allows drawing 
 ## Project Structure
 
 ```
-├── main.cpp              # Main file with program code
-├── GraphicalEditor.h     # Header file (if exists)
-├── images/               # Folder with icons
-│   ├── icon.png
-│   ├── circle.png
-│   ├── rectangle.png
-│   ├── triangle.png
-│   ├── group.png
-│   └── report.png
-└── fonts/                # Folder with fonts
-    └── roboto.ttf
-```
-
-## Installation and Compilation
-
-### Installing SFML
-
-**Ubuntu/Debian:**
-```bash
-sudo apt-get install libsfml-dev
-```
-
-**macOS:**
-```bash
-brew install sfml
-```
-
-**Windows:**
-Download SFML from the official website and configure in your IDE.
-
-### Compilation
-
-```bash
-g++ -std=c++17 main.cpp -lsfml-graphics -lsfml-window -lsfml-system -o graphical_editor
-```
-
-Or use Makefile:
-```makefile
-CXX = g++
-CXXFLAGS = -std=c++17 -Wall
-LIBS = -lsfml-graphics -lsfml-window -lsfml-system
-
-graphical_editor: main.cpp
-	$(CXX) $(CXXFLAGS) main.cpp $(LIBS) -o graphical_editor
-
-clean:
-	rm -f graphical_editor
-```
-
-## Usage
-
-### Running the Program
-```bash
-./graphical_editor
+├── Header Files/
+│   ├── ButtonFigure.h
+│   ├── ButtonReport.h
+│   ├── Circle.h
+│   ├── CircleButton.h
+│   ├── Figure.h
+│   ├── GraphicalEditor.h
+│   ├── Group.h
+│   ├── GroupButton.h
+│   ├── Rectangle.h
+│   ├── RectangleButton.h
+│   ├── resource.h
+│   ├── Triangle.h
+│   └── TriangleButton.h
+├── Source Files/
+│   ├── ButtonFigure.cpp
+│   ├── ButtonReport.cpp
+│   ├── Circle.cpp
+│   ├── CircleButton.cpp
+│   ├── GraphicalEditor.cpp
+│   ├── Group.cpp
+│   ├── GroupButton.cpp
+│   ├── main_Window.cpp
+│   ├── Rectangle.cpp
+│   ├── RectangleButton.cpp
+│   ├── Triangle.cpp
+│   └── TriangleButton.cpp
+├── Resource Files/
+│   └── laba_OOP.rc
+├── External Dependencies/
+└── images/               # Folder with icons (if exists)
+└── fonts/                # Folder with fonts (if exists)
 ```
 
 ### Toolbar
@@ -110,6 +88,33 @@ The program has a toolbar at the top with the following sections:
 - **Ctrl+V** - Paste copied shape
 
 ## Program Architecture
+
+The project follows a modular architecture with separate header and source files for each class:
+
+### Class Structure
+
+#### Core Classes
+- **Figure.h/.cpp** - Abstract base class for all shapes
+- **Circle.h/.cpp** - Circle shape implementation
+- **Rectangle.h/.cpp** - Rectangle shape implementation  
+- **Triangle.h/.cpp** - Triangle shape implementation
+- **Group.h/.cpp** - Shape grouping functionality
+
+#### Button Classes
+- **ButtonFigure.h/.cpp** - Abstract base class for tool buttons
+- **ButtonReport.h/.cpp** - Screenshot functionality button
+- **CircleButton.h/.cpp** - Circle creation tool
+- **RectangleButton.h/.cpp** - Rectangle creation tool
+- **TriangleButton.h/.cpp** - Triangle creation tool
+- **GroupButton.h/.cpp** - Grouping tool
+
+#### Main Application
+- **GraphicalEditor.h/.cpp** - Main application class
+- **main_Window.cpp** - Application entry point
+
+#### Resources
+- **resource.h** - Resource definitions
+- **laba_OOP.rc** - Resource file
 
 ### Main Classes
 
