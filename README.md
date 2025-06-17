@@ -180,7 +180,3 @@ Main program class that manages:
 ## Author
 
 This project was created as an educational example of working with SFML and basic OOP principles in C++.
-
-## License
-
-Project is available under open license for educational purposes.
